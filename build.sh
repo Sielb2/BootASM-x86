@@ -1,7 +1,5 @@
 #!/bin/bash
 nasm -f bin boot.asm -o boot.bin
-nasm -f bin print.asm -o print.bin
-nasm -f bin graphics.asm -o graphics.bin
-nasm -f bin shell.asm -o shell.bin
-
-cat boot.bin print.bin shell.bin graphics.bin > mangos.bin
+nasm -f bin kernel/kernel.asm -o kernel.bin
+nasm -f bin kernel/kernel_art.asm -o kernel_art.bin
+cat boot.bin kernel.bin > goonos.bin
